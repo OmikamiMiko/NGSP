@@ -1,0 +1,364 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="./index.js"></script>
+	<style>
+		@import url("./ubuntu-regular.css");
+
+		.setting-text { background: #2C2F33;}
+		.setting-value { background: #2C2F33;}
+		.setting-control { width: 65px; }
+
+		body {
+			font-family: Ubuntu, sans serif;
+			overflow: hidden;
+			background: #484d54;
+			margin: 0px;
+			border-style:solid; 
+			border-color: darkgray;
+			border-width: 1px;
+			font-size: 15px;
+		}
+
+		label {
+			font-size: 14px;
+		}
+
+		.parent {
+			display: grid;
+			grid-template-columns: 30px 1fr 30px;
+			grid-template-rows: 24px 1fr;
+			grid-column-gap: 0px;
+			height: 100%;
+		}
+
+		.row1 {
+			grid-area: 1 / 1 / 2 / 6;
+			background: #2C2F33;
+		}
+
+		.row2 {
+			grid-area: 2 / 1 / 3 / 6;
+
+		}
+	
+		.util-reset-margin p {
+			margin: 0px;
+		}
+
+		.util-select-lock {
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+		}
+
+		.logo {
+			grid-area: 1 / 1 / 2 / 2;
+			padding: 2px;
+			text-align: center;
+
+			vertical-align: middle;
+		}
+
+		.header {
+			grid-area: 1 / 2 / 2 / 3;
+			color: white;
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		.header-text {
+			padding-top: 3px;
+			font-size: 14px;
+			color: gray;
+		}
+
+		.controls {
+			grid-area: 1 / 3 / 2 / 4;
+		}
+
+		.control {
+			padding-left: 2px;
+			transition: background ease 0.32s;
+		}
+
+		.control:hover {
+			background-color: #222426;
+		}
+
+		p {
+			font-size: 14px;
+		}
+
+		.workWrap {
+			grid-area: 2 / 1 / 3 / 4;
+			min-height: 0;
+		}
+
+		.tabs {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		.tabs__header {
+			display: flex;
+			justify-content: center;
+			background: #2C2F33;
+		}
+
+		.tabs label {
+			order: 1;
+			display: block;
+			padding: 0.6em;
+			margin-right: 0.2rem;
+			cursor: pointer;
+			color: white;
+			transition: background ease 0.32s;
+		}
+
+		.centered-text {
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		.card-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-content: center;
+		}
+
+		.card {
+			background-color: #2C2F33;
+			margin: 5px;
+			padding: 5px;
+			width: 120px;
+		}
+
+		.card-wide {
+			background-color: #2C2F33;
+			margin: 5px;
+			padding: 5px;
+			width: 400px;
+		}
+
+		.tab {
+			order: 99;
+			flex-grow: 1;
+			width: 100%;
+			height: 100%;
+			display: none;
+			padding: 5px;
+			overflow-y: auto;
+			box-sizing: border-box;
+			-webkit-animation: text-focus-in 0.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+			animation: text-focus-in 0.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+		}
+
+		.tabs input[type="radio"] {
+			display: none;
+		}
+
+		.tabs input[type="radio"]:checked+label {
+			background: #222426;
+		}
+
+		.tab {
+			color: white;
+		}
+
+		.tab--active {
+			display: block;
+		}
+
+		hr {
+			display: block;
+			height: 1px;
+			border: 0;
+			border-top: 1px solid red;
+			margin: 5 0;
+			padding: 0;
+		}
+
+		.control-btn {
+			background-color: transparent;
+			color: white;
+			border: 1px solid red;
+			width: 120px;
+			margin-top: 3px;
+		}
+
+		.control-btn:hover {
+			background-color: red;
+		}
+
+		#scroller {
+			overflow-y: auto;
+			overflow-x: hidden;
+			max-height: calc(100vh- 30px);
+		}
+
+		::selection {
+			background: red;
+		}
+
+		/* width */
+		::-webkit-scrollbar {
+			width: 8px;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track {
+			background: darkgray;
+		}
+
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+			background: gray;
+		}
+
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+			background: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="parent">
+		<div class="row1"> </div>
+		<div class="row2"> </div>
+		<div class="logo util-select-lock"> </div>
+		<div class="controls util-select-lock">
+			<div class="control" id="control-close">
+				<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+					<path fill="white"
+						d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+				</svg>
+			</div>
+		</div>
+		<div class="header util-select-lock" style="-webkit-app-region: drag">
+			<div class="header-text util-select-lock">NGSP control panel</div>
+		</div>
+		<div class="workWrap">
+			<div class="tabs">
+				<div class="tabs__header util-select-lock">
+					<input type="radio" name="tabs" id="tabone" checked data-tab="1">
+					<label for="tabone">Status</label>
+					<input type="radio" name="tabs" id="tabtwo" data-tab="2">
+					<label for="tabtwo">Settings</label>
+					<input type="radio" name="tabs" id="tabthree" data-tab="3">
+					<label for="tabthree">Actions</label>
+				</div>
+
+				<div class="tab tab--active" data-tab="1">
+					<div class="card-container util-select-lock">
+						<div class="card">
+							<div class="centered-text">
+								<b>NGSP</b>
+							</div>
+							<hr>
+							<div class="util-reset-margin">
+								<p id="ngsp-ver">Ver:</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered-text">
+								<b>Core</b>
+							</div>
+							<hr>
+							<div class="util-reset-margin">
+								<p id="soft-runtime">Runtime:</p>
+								<p id="soft-modulever">ModVer:</p>
+								<p id="soft-platform">Platform:</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered-text">
+								<b>Game</b>
+							</div>
+							<hr>
+							<div class="util-reset-margin">
+								<p id="game-admin">Admin:</p>
+								<p id="game-patch">Client: </p>
+								<p id="game-proto">Proto: </p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered-text">
+								<b>Player</b>
+							</div>
+							<hr>
+							<div class="util-reset-margin">
+								<p id="templ">Template: </p>
+								<p id="templ-class">Class: </p>
+								<p id="templ-race">Race: </p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered-text">
+								<b>Ping stats</b>
+							</div>
+							<hr>
+							<div class="util-reset-margin">
+								<p id="ping-eff">EffSpread:</p>
+								<p id="ping-spread">Spread:</p>
+								<p id="ping-median">Median: </p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered-text">
+								<b>Ping</b>
+							</div>
+							<hr>
+							<div class="util-reset-margin">
+								<p id="ping-min">Min:</p>
+								<p id="ping-avg">Avg:</p>
+								<p id="ping-max">Max: </p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered-text">
+								<b>Jitter stats</b>
+							</div>
+							<hr>
+							<div class="util-reset-margin">
+								<p id="jitter-avg">Avg: </p>
+								<p id="jitter-max">Max:</p>
+							</div>
+						</div>
+						<div class="card-wide">
+							<div class="centered-text">
+								<b>Ping graph</b>
+							</div>
+							<hr>
+							<canvas id="chart" style="width:100%; height: 52px;"></canvas>
+						</div>
+					</div>
+				</div>
+				<div class="tab" data-tab="2">
+					<div class="settings-container util-select-lock" id="scroller"></div>
+				</div>
+				<div class="tab" data-tab="3">
+					<div class="card-container util-select-lock">
+						<div class="card">
+							<div class="centered-text">
+								<b>Filesystem</b>
+							</div>
+							<hr>
+							<div>
+								<button class="control-btn" id="btn-openNgspFolder">NGSP folder</buton>
+								<button class="control-btn" id="btn-openLogsFolder">Logs folder</buton>
+								<button class="control-btn" id="btn-openSettingsFolder">Settings</button>
+								<button class="control-btn" id="btn-openEmulationFolder">Emulation</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+
+</html>

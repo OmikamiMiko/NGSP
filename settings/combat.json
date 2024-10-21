@@ -1,0 +1,7 @@
+{ 
+	"fixFreezeAtPerfectBlock": true,
+	"tryResyncNpcs": true,
+	"tryResyncPlayers": false,
+	"fixDelayedBuffsMe": true,
+	"fixDelayedBuffsNpcs": false
+}

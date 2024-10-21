@@ -1,0 +1,243 @@
+{
+    "default": {
+        "additionalCombatFixes": true,
+        "additionalVisualChanges": true,
+        "advancedAbnormals": true,
+        "advancedCC": false,
+        "advancedChargesRelease": true,
+        "advancedCooldowns": true,
+        "advancedProjectiles": true,
+        "advancedNpcsAttacks": true,
+        "backstabsResync": true,
+        "backstabsSpoof": false,
+        "customCommandPrefix": "",
+        "debug": false,
+        "debugAbnormals": false,
+        "debugAspd": false,
+        "debugCooldowns": false,
+        "debugGlyphs": false,
+        "debugItems": false,
+        "debugLoc": false,
+        "debugPolishing": false,
+        "debugTalents": false,
+        "defaultPingValue": -1,
+        "enabled": true,
+        "fastCastBlockCalibrationType": "jitter",
+        "fastCastSkillsCalibrationTime": 8,
+        "ingameUIPing": "min",
+        "jitterCompensation": true,
+        "jitterCompensationChargesMax": 60,
+        "jitterCompensationChargesMin": 0,
+        "jitterCompensationMax": 35,
+        "jitterCompensationMin": 0,
+        "jitterHistoryMax": 20,
+        "language": "auto",
+        "pingHelperTimeout": 800,
+        "pingHistoryMax": 30,
+        "pingMethod": "hybrid",
+        "resyncReactions": true,
+        "resyncZ": true,
+        "serverTimeout": 150,
+        "shortcutEnable": "Ctrl+Shift+N",
+        "shortcutUISettings": "Ctrl+Alt+N",
+        "skillRetryCount": 3,
+        "skillRetryMs": 25,
+        "useTestFeatures": false,
+        "version": "12.0.0",
+        "notifications": false
+    },
+    "migration": {
+        "12.0.0": {
+            "configAdd": {},
+            "configRemove": [],
+            "removeFile": [
+                "./data/internal/controlUi/",
+                "./settings/emulation.js",
+                "./node_modules/rfdc/"
+            ]
+        },
+        "11.18.0": {
+            "configAdd": {},
+            "configRemove": [],
+            "removeFile": [
+                "./data/internal/controlUi/",
+                "./data/emu/93/",
+                "./data/emu/94/",
+                "./data/emu/95/",
+                "./data/emu/96/",
+                "./data/emu/97/"
+            ]
+        },
+        "11.3.0": {
+            "configAdd": {
+                "advancedNpcsAttacks": true,
+                "shortcutEnable": "Ctrl+Shift+N",
+                "shortcutUISettings": "Ctrl+Alt+N"
+            },
+            "configRemove": [
+                "shortcutUIPing"
+            ],
+            "removeFile": []
+        },
+        "10.43.0": {
+            "configAdd": {
+                "notifications": false
+            },
+            "configRemove": [],
+            "removeFile": []
+        },
+        "10.8.21": {
+            "configAdd": {},
+            "configRemove": [],
+            "removeFile": [
+                "./data/emu/93/",
+                "./data/emu/95/blacklisted-data.json"
+            ]
+        },
+        "10.7.0": {
+            "configAdd": {
+                "jitterHistoryMax": 35,
+                "advancedChargesRelease": true
+            },
+            "configRemove": [
+                "jitterCompensationApplyAverage",
+                "jitterCompensationChargesApplyAverage"
+            ],
+            "removeFile": [
+                "./data/emu/92/"
+            ]
+        },
+        "10.5.21": {
+            "configAdd": {
+                "jitterCompensation": true,
+                "additionalVisualChanges": true,
+                "advancedProjectiles": true
+            },
+            "configRemove": [],
+            "removeFile": []
+        },
+        "10.2.7": {
+            "configAdd": {
+                "debugAspd": false
+            },
+            "configRemove": [
+                "jitterCompensation"
+            ],
+            "removeFile": []
+        },
+        "10.0.0": {
+            "configAdd": {
+                "fastCastBlockCalibrationType": "jitter"
+            },
+            "configRemove": [],
+            "removeFile": []
+        },
+        "9.9.13": {
+            "configAdd": {
+                "debugAspd": false
+            },
+            "configRemove": [],
+            "removeFile": []
+        },
+        "9.6.10": {
+            "configAdd": {
+                "debugAspd": false
+            },
+            "configRemove": [],
+            "removeFile": []
+        },
+        "9.4.9": {
+            "configAdd": {
+                "skillRetryCount": 3,
+                "skillRetryMs": 25,
+                "serverTimeout": 150,
+                "jitterCompensationChargesMax": 65,
+                "jitterCompensationMax": 35,
+                "ingameUIPing": "min",
+                "pingMethod": "hybrid",
+                "pingHistoryMax": 35,
+                "pingHelperTimeout": 1200,
+                "defaultPingValue": -1,
+                "fastCastSkillsCalibrationTime": 10
+            },
+            "configRemove": [],
+            "removeFile": [
+                "./data/emu/86/",
+                "./data/emu/87/",
+                "./data/emu/88/",
+                "./data/emu/89/"
+            ]
+        },
+        "9.3.0": {
+            "configAdd": {
+                "advancedProjectiles": false
+            },
+            "configRemove": [],
+            "removeFile": []
+        },
+        "9.2.18": {
+            "configAdd": {
+                "additionalCombatFixes": true
+            },
+            "configRemove": [],
+            "removeFile": [
+                "./data/emu/86/",
+                "./data/internal/pingUi/",
+                "./data/internal/pingUiD/",
+                "./data/internal/debugUI/",
+                "./data/internal/migration.json",
+                "./data/internal/default-settings.json"
+            ]
+        },
+        "9.0.0": {
+            "configAdd": {
+                "useTestFeatures": false,
+                "additionalCombatFixes": false
+            },
+            "configRemove": [
+                "skillRetryAlways",
+                "jitterCompensationRetries",
+                "chargeReleaseDelay",
+                "chargesCalibrationTime",
+                "forceResyncReactions"
+            ],
+            "removeFile": [
+                "./data/internal/translations/",
+                "./lib/helpers/utils.js",
+                "./lib/helpers/ena.js",
+                "./lib/helpers/corrector.js",
+                "./lib/helpers/",
+                "./data/strings/",
+                "./data/emu/85/blacklisted-data.json",
+                "./data/emu/85/effects-override.json",
+                "./data/emu/85/effects.json",
+                "./data/emu/85/items.json",
+                "./data/emu/85/movements.json",
+                "./data/emu/85/skills-override.js",
+                "./data/emu/85/skills.json",
+                "./data/emu/85/",
+                "./data/internal/translationsUI"
+            ]
+        },
+        "8.5.12": {
+            "configAdd": {},
+            "configRemove": [
+                "skillRetryAlways",
+                "jitterCompensationRetries",
+                "chargeReleaseDelay",
+                "chargesCalibrationTime"
+            ],
+            "removeFile": [
+                "./data/strings/",
+                "./data/emu/85/blacklisted-data.json",
+                "./data/emu/85/effects-override.json",
+                "./data/emu/85/effects.json",
+                "./data/emu/85/items.json",
+                "./data/emu/85/movements.json",
+                "./data/emu/85/skills-override.js",
+                "./data/emu/85/skills.json",
+                "./data/internal/translationsUI"
+            ]
+        }
+    }
+}

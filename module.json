@@ -1,0 +1,32 @@
+{
+    "name": "ngsp",
+    "author": "MT: The Dream / SaltyMonkey",
+    "description": "Simulates skills client-side, eliminating ping-based delays and animation lock.",
+    "options": {
+        "cliName": "NGSP",
+        "guiName": "Next-Gen Skill Prediction"
+    },
+    "servers": ["https://downloads.mtdream.net/tera-toolbox/mods/ngsp/"],
+    "conflicts": [
+        "zsync",
+        "aa-zsync",
+        "cooldowns",
+        "cooldowns-master",
+        "fastfire",
+        "fastfire-master",
+        "fast-fire",
+        "fast-fire-master",
+        "lockons",
+        "lockons-master",
+        "lockons-light",
+        "lockons-light-master",
+        "ping-compensation",
+        "ping-remover",
+        "skill-prediction",
+        "skill-prediction-master",
+        "skill-prediction-plus",
+        "ngsp-100",
+        "ngsp-100-master",
+        "ngsp-master"
+    ]
+}
