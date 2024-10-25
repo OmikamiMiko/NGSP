@@ -87,5 +87,85 @@
     "settings/emulation-tera.js": "d049c63c4f18bae66fdab09d701d82c3db994a39449f8668c73e306b631052f4",
     "settings/emulation-tba.js": "70f61008efd6a4d58ca7e386e23aa843a3f91b0da3f46e66281df6ad5b2a3ede",
     "settings/settings.json": "1c13d0416ce8eefb6c07c06813d2cbe6cffb6261060c724f6bbbd1ba4433f0c9"
-  }
+  },
+  "defs": {
+		"C_CANCEL_SKILL": 3,
+		"C_CAN_LOCKON_TARGET": 3,
+		"C_HIT_USER_PROJECTILE": 4,
+		"C_NOTIFY_LOCATION_IN_ACTION": [
+			4,
+			"c_notify_location_in_dash"
+		],
+		"C_NOTIFY_LOCATION_IN_DASH": 4,
+		"C_NOTIMELINE_SKILL": 3,
+		"C_PLAYER_LOCATION": 5,
+		"C_PRESS_SKILL": 5,
+		"C_REQUEST_GAMESTAT_PING": [
+			1,
+			"raw"
+		],
+		"C_START_COMBO_INSTANT_SKILL": [
+			6,
+			"c_start_instance_skill"
+		],
+		"C_START_INSTANCE_SKILL": [
+			8,
+			"c_start_instance_skill_ex"
+		],
+		"C_START_INSTANCE_SKILL_EX": 5,
+		"C_START_SKILL": [
+			7,
+			"c_press_skill",
+			"c_start_targeted_skill"
+		],
+		"C_START_TARGETED_SKILL": [
+			7,
+			"c_start_combo_instant_skill"
+		],
+		"S_ABNORMALITY_BEGIN": 4,
+		"S_ABNORMALITY_END": 1,
+		"S_ABNORMALITY_REFRESH": 2,
+		"S_ACTION_END": 5,
+		"S_ACTION_STAGE": 9,
+		"S_CANNOT_START_SKILL": 4,
+		"S_CAN_LOCKON_TARGET": 3,
+		"S_CONNECT_SKILL_ARROW": 3,
+		"S_CREATURE_LIFE": 3,
+		"S_CREST_APPLY": 2,
+		"S_CREST_MESSAGE": 2,
+		"S_DECREASE_COOLTIME_SKILL": 4,
+		"S_DEFEND_SUCCESS": 3,
+		"S_DESPAWN_PROJECTILE": 2,
+		"S_EACH_SKILL_RESULT": 14,
+		"S_END_USER_PROJECTILE": 4,
+		"S_GRANT_SKILL": 3,
+		"S_INSTANT_DASH": 3,
+		"S_INSTANT_MOVE": 3,
+		"S_LOAD_TOPO": "raw",
+		"S_LOGIN": [
+			"raw",
+			14
+		],
+		"S_MOUNT_VEHICLE": 2,
+		"S_MOUNT_VEHICLE_EX": 1,
+		"S_PLAYER_CHANGE_STAMINA": 1,
+		"S_PLAYER_STAT_UPDATE": 17,
+		"S_RESPONSE_GAMESTAT_PONG": "raw",
+		"S_RETURN_TO_LOBBY": [
+			1,
+			"raw"
+		],
+		"S_RP_SKILL_POLISHING_LIST": 1,
+		"S_SKILL_LIST": 2,
+		"S_SPAWN_ME": [
+			3,
+			"raw"
+		],
+		"S_SPAWN_PROJECTILE": 5,
+		"S_START_COOLTIME_SKILL": 4,
+		"S_START_USER_PROJECTILE": 9,
+		"S_SYSTEM_MESSAGE": 1,
+		"S_UNMOUNT_VEHICLE": 2,
+		"S_UNMOUNT_VEHICLE_EX": 1
+	}
 }
